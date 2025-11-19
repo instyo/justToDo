@@ -1,12 +1,6 @@
 fastlane documentation
 ----
 
-# Prerequisites
-
-- Copy AuthKey_XXXXXXX.p8 to fastlane directory
-- Rename .env.sample to .env and put all your keys there
-
-
 # Installation
 
 Make sure you have the latest version of the Xcode command line tools installed:
@@ -52,6 +46,14 @@ Create ipa
 ```
 
 Upload to TestFlight
+
+### ios run_unit_tests
+
+```sh
+[bundle exec] fastlane ios run_unit_tests
+```
+
+Run all the tests
 
 ### ios screenshot
 

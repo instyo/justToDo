@@ -32,12 +32,22 @@ platform :ios do
 
   desc "Upload to TestFlight"
   lane :beta do
-    asc_api_key          # <--- REQUIRED
+    run_unit_tests
+    asc_api_key
     build
     pilot(
       skip_waiting_for_build_processing: false
     )
   end
+
+  desc "Run all the tests"
+  lane :run_unit_tests do
+    scan(
+      scheme: "Just ToDo",
+      clean: true,
+      devices: ["iPhone 16"]
+      )
+    end
 
   desc "Take screenshots"
   lane :screenshot do
